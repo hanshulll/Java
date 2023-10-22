@@ -11,11 +11,11 @@ interface MultiParameter {
     void print(Integer p, Integer q);
 }
 
-interface ReturnParameter{
+interface ReturnParameter {
     boolean returnSomething(Integer p);
 }
 
-interface AddNumbers{
+interface AddNumbers {
     int sum(Integer a, Integer b);
 }
 
@@ -45,20 +45,38 @@ public class LambdaSyntax {
         MultiParameter multiParameter = (p, q) -> System.out.println(p + " " + q);
         multiParameter.print(23, 55);
 
+
         //MULTILINE LAMBDA EXPRESSION (In case of multi line lambda expression we must use curly braces)
+
+        // 1st way to execute Multi Line Lambda Expression
         runSingleParameter((p) -> {
             if (p % 2 == 0) System.out.println("even");
             else System.out.println("odd");
         }, 20);
 
+        // 2nd way to execute Multi Line Lambda Expression
+        SingleParameter singleParameter1 = (p) -> {
+            if (p % 2 == 0) System.out.println("even");
+            else System.out.println("odd");
+        };
+        singleParameter1.print(21);
+
+
         // LAMBDA EXPRESSION WITH RETURN TYPE (if we are using return statement we have to use curly bracket in lambda expression)
-        runReturnParameter((o)->{
-            if (o%2==0) return true;
-            else return false;
-        },3);
+
+        // 1st way to execute Return Parameter Lambda Expression
+        runReturnParameter((o) -> {
+            return o % 2 == 0;
+        }, 3);
+
+        // 2nd way to execute Return Parameter Lambda Expression
+        ReturnParameter returnParameter = (o) -> {
+            return o % 2 == 0;
+        };
+        System.out.println(returnParameter.returnSomething(7));
 
         //ANOTHER EXAMPLE OF LAMBDA WITH A RETURN TYPE
-        runAddNumbers((a,b)->a+b,20,30);
+        runAddNumbers((a, b) -> a + b, 20, 30);
     }
 
     static void runNoParameter(NoParameter noParameter) {
@@ -72,12 +90,13 @@ public class LambdaSyntax {
     static void runMultiParameter(MultiParameter multiParameter, Integer p, Integer q) {
         multiParameter.print(p, q);
     }
-    static void runReturnParameter(ReturnParameter returnParameter,Integer p){
+
+    static void runReturnParameter(ReturnParameter returnParameter, Integer p) {
         System.out.println(returnParameter.returnSomething(p));
         System.out.println(returnParameter.returnSomething(4));
     }
 
-    static void runAddNumbers(AddNumbers addNumbers,Integer a, Integer b){
-        System.out.println(addNumbers.sum(a,b));
+    static void runAddNumbers(AddNumbers addNumbers, Integer a, Integer b) {
+        System.out.println(addNumbers.sum(a, b));
     }
 }
