@@ -1,3 +1,5 @@
+// chained hashing using ArrayList of LinkedList
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 
