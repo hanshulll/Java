@@ -1,4 +1,6 @@
 // chained hashing using ArrayList of LinkedList
+// We always use prime numbers or nearest prime number from N-1 i.e the size of the HashTable for HashFunction and never 
+// use 2 or 2 power number and same goes for 10 and 10 power numbers
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -34,7 +36,7 @@ public class ChainedHashing {
     }
 
     public static void main(String[] args) {
-        ChainedHashing hashTable = new ChainedHashing(10);
+        ChainedHashing hashTable = new ChainedHashing(7);
         hashTable.insert(20);
         hashTable.insert(21);
         System.out.println(hashTable.search(20));
