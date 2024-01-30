@@ -1,3 +1,4 @@
+package org.hashing;
 // chained hashing using ArrayList of LinkedList
 // We always use prime numbers or nearest prime number from N-1 i.e the size of the HashTable for HashFunction and never 
 // use 2 or 2 power number and same goes for 10 and 10 power numbers
